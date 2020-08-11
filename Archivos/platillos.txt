@@ -1,0 +1,36 @@
+100;Hamburguesa;1;1000;ENTRADA
+101;Hamburguesa con queso;1;1350;COMIDA
+102;Hamburguesa con 2 tortas;1;1400;COMIDA
+103;Hamburgesa con 2 tortas y queso;1;1600;COMIDA
+104;Hamburguesa con carne a la plancha;1900;COMIDA
+105;Papas fritas;1;1100;COMIDA
+106;Salchipapas;0;1200;COMIDA
+107;Carne a la plancha;1;1850;COMIDA
+108;Aros de cebolla;1;2200;COMIDA
+109;Hot dog;0;900;ENTRADA
+110;Empanada de carne;1;1100;COMIDA
+111;Empanada de pollo;1;1100;COMIDA
+112;Empanada de queso;1;1100;COMIDA
+113;Empanada de frijoles;1;1100;COMIDA
+114;Empanada arreglada;0;1500;COMIDA
+115;Empanada de chicharron;1;1300;COMIDA
+116;Enyucado;1;1000;ENTRADA
+117;Taco sencillo;1;850;ENTRADA
+118;Tacos dobles;1;1400;COMIDA
+119;Nachos de pollo;1;2100;COMIDA
+120;Nachos de carne;0;2100;COMIDA
+121;Nachos mixtos;0;3000;COMIDA
+122;Doraditas;1;1000;ENTRADA
+123;Burritos;1;1600;COMIDA
+124;Cono de helado;1;700;POSTRE
+125;Cajita de helado;1;450;POSTRE
+126;Helados con gelatina;0;1800;POSTRE
+127;Batido en leche;1;1550;BEBIDA
+128;Batido en agua;1;1350;BEBIDA
+129;Banana Split;1;2300;POSTRE
+130;Sunday;1;1400;POSTRE
+131;Cheesecake;0;2200;POSTRE
+132;Tres leches;1;2250;POSTRE
+134;Bebida gaseosa;1;900;BEBIDA
+135;Bebida natural;1;900;BEBIDA
+136;Té frío;0;800;BEBIDA
