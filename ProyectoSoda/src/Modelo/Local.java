@@ -13,11 +13,18 @@ public class Local {
     
     private ArrayList<Administrador> Admins = new ArrayList<Administrador>();
     
+    
+    public boolean validarAdmin(long cod){
+        for(Administrador unAdm: Admins){
+            if(unAdm.getCodigo()==cod){
+                return true;
+            }
+        }
+        return false;
+    }
 
     public ArrayList<Administrador> getAdmins() {
         return Admins;
     }
-    
-    
     
 }
