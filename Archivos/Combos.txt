@@ -1,0 +1,16 @@
+200;Combo 1;1;2100;Hamburguesa con papas fritas;100;105
+201;Combo 2;1;2300;Hamburguesa con queso y papas fritas;101;105
+202;Combo 3;1;2600;Hamburguesa y bebida gaseosa;100;134
+203;Combo 4;1;2900;Hamburguesa con queso y bebida gaseosa;101;134
+204;Combo 5;0;3100;Hamburguesa con 2 tortas y queso con bebida gaseosa;103;134
+205;Combo 6;1;3200;Hamburguesa con carne a la plancha y papas fritas;104;105
+206;Combo 7;0;1500;Hamburguesa con bebida natural;100;135
+207;Combo 8;1;2800;Aros de cebolla con papas fritas;108;105
+208;Combo 9;1;1800;Empanadas de carne y pollo;110;111
+209;Combo 10;1;2000;Empanada de chicharron y enyucado;115;116
+210;Combo 11;0;3500;Nachos mixtos y bebida gaseosa;121;134
+211;Combo 12;1;2300;Tacos dobles y burrito;118;123
+212;Combo 13;0;2600;Hot dog y nachos de carne;109;120
+213;Combo 14;1;2900;Cono de helado y cheesecake;124;131
+214;Combo 15;1;2000;Cajita de helado y batido en leche;125;127
+215;Combo 16;0;3500;Banana Split y Tres leches;129;132
