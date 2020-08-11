@@ -4,7 +4,9 @@ package Modelo;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 
 /**
@@ -60,6 +62,30 @@ public class ArchivoTXT {
             }
         }
         return info;
+    }
+    
+    public boolean escribir(String linea){
+        
+        FileWriter fichero = null;
+        PrintWriter pw = null;
+        
+        try{
+            fichero = new FileWriter(nombre,true);
+            pw = new PrintWriter(fichero);
+            
+            pw.println(linea);
+            
+        } catch (Exception e) {
+            return false;
+        } finally {
+           try {
+               if (null != fichero)
+                  fichero.close();
+               } catch (Exception e2) {
+                  return false;
+               }
+        }
+        return true;
     }
 
     public String getNombre() {
