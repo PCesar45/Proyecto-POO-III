@@ -64,7 +64,12 @@ public class ArchivoTXT {
         return info;
     }
     
-    public boolean escribir(String linea){
+    /**
+     * Escribe en un archivo de texto
+     * @param linea
+     * @return bandera
+     */
+    public boolean append(String linea){
         
         FileWriter fichero = null;
         PrintWriter pw = null;
