@@ -6,6 +6,7 @@ import Controlador.Singleton;
 import Modelo.Combo;
 import Modelo.FactoryProducto;
 import Modelo.LeerAdmins;
+import Modelo.LeerCombos;
 import Modelo.LeerPlatos;
 import Modelo.Plato;
 import Modelo.TPlato;
@@ -22,10 +23,19 @@ public class MainPruebas {
     public static void main(String[] args) {
         
         //Carga la información de los admins
-        LeerPlatos p1 = new LeerPlatos();
+        LeerAdmins adms= new LeerAdmins();
+        adms.Recuperar();
+        
+        //Carga los platos
+        LeerPlatos plts= new LeerPlatos();
+        plts.Recuperar();
+        
+        //Carga los combos
+        LeerCombos p1 = new LeerCombos();
         p1.Recuperar();
         
-        System.out.println(Singleton.getInstance().getMiLocal().getMenu().VerPlatos().toString());
+        System.out.println(Singleton.getInstance().getMiLocal().getMenu().VerCombos().toString());
+        System.out.println();
         
         Plato unPlato= (Plato) FactoryProducto.getProducto(TProducto.PLATO, 1, "Pollo", true, 1700);
         unPlato.setTipo(TPlato.COMIDA);

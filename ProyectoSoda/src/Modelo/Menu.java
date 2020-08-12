@@ -12,8 +12,8 @@ import java.util.ArrayList;
  * @author bryan
  */
 public class Menu {
-    private ArrayList<Combo> listCombo= new ArrayList<>();
-    private ArrayList<Plato> listPlatillo= new ArrayList<>();
+    private ArrayList<Combo> listCombo= new ArrayList<Combo>();
+    private ArrayList<Plato> listPlatillo= new ArrayList<Plato>();
 
     public Menu() {
     }
@@ -22,7 +22,8 @@ public class Menu {
         return listPlatillo;
     }
     
-    public void VerCombos(){
+    public ArrayList VerCombos(){
+        return listCombo;
     }
     
     public void ModificarPlato(Plato platillo){
@@ -34,11 +35,20 @@ public class Menu {
     }
     
     public void RegistrarCombo(Combo unCombo){
-        
+        listCombo.add(unCombo);
     }
     
     public void ModificarCombo(){
         
+    }
+    
+    public Plato getPlato(int cod){
+        for(Plato Plt: listPlatillo){
+            if(Plt.getCodigo()==cod){
+                return Plt;
+            }
+        }
+        return null;
     }
 }
 
