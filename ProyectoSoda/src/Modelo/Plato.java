@@ -16,5 +16,22 @@ public class Plato extends Producto {
         super(codigo, nombre, disponibilidad, precio);
         this.tipo = tipo;
     }
+
+    public Plato(int codigo, String nombre, boolean disponibilidad, float precio) {
+        super(codigo, nombre, disponibilidad, precio);
+    }
+
+    public TPlato getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(TPlato tipo) {
+        this.tipo = tipo;
+    }
+
+    @Override
+    public String toString() {
+        return "Plato{" + "tipo=" + tipo + '}';
+    }
     
 }

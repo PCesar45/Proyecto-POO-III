@@ -19,5 +19,30 @@ public class Combo extends Producto {
         super(codigo, nombre, disponibilidad, precio);
         this.descripcion = descripcion;
     }
+
+    public Combo(int codigo, String nombre, boolean disponibilidad, float precio) {
+        super(codigo, nombre, disponibilidad, precio);
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public ArrayList<Plato> getLosPlatos() {
+        return losPlatos;
+    }
+
+    public void setLosPlatos(ArrayList<Plato> losPlatos) {
+        this.losPlatos = losPlatos;
+    }
+
+    @Override
+    public String toString() {
+        return "Combo{" + "descripcion=" + descripcion + ", losPlatos=" + losPlatos + '}';
+    }
     
 }
