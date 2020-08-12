@@ -18,7 +18,8 @@ public class Menu {
     public Menu() {
     }
     
-    public void VerPlatos(){
+    public ArrayList VerPlatos(){
+        return listPlatillo;
     }
     
     public void VerCombos(){
@@ -28,8 +29,8 @@ public class Menu {
         
     }
     
-    public void RegistrarPlato(){ //tal vez no deba recibir el objeto plato
-        
+    public void RegistrarPlato(Plato platillo){ //tal vez no deba recibir el objeto plato
+        listPlatillo.add(platillo);
     }
     
     public void RegistrarCombo(Combo unCombo){

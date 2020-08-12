@@ -2,7 +2,7 @@
 101;Hamburguesa con queso;1;1350;COMIDA
 102;Hamburguesa con 2 tortas;1;1400;COMIDA
 103;Hamburgesa con 2 tortas y queso;1;1600;COMIDA
-104;Hamburguesa con carne a la plancha;1900;COMIDA
+104;Hamburguesa con carne a la plancha;0;1900;COMIDA
 105;Papas fritas;1;1100;COMIDA
 106;Salchipapas;0;1200;COMIDA
 107;Carne a la plancha;1;1850;COMIDA

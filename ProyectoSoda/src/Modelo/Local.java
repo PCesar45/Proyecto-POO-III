@@ -10,7 +10,7 @@ public class Local {
     private int capacidad;
     private double aforo;
     private int maxOrdenes;
-    
+    private Menu menu= new Menu();
     private ArrayList<Administrador> Admins = new ArrayList<Administrador>();
     
     
@@ -27,4 +27,7 @@ public class Local {
         return Admins;
     }
     
+    public Menu getMenu(){
+        return menu;
+    }
 }

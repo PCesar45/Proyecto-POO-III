@@ -31,7 +31,7 @@ public class Plato extends Producto {
 
     @Override
     public String toString() {
-        return "Plato{" + "tipo=" + tipo + '}';
+        return "Plato{" + "codigo: " + codigo + " nombre: "+ nombre + " precio: "+ precio + '}';
     }
     
 }
