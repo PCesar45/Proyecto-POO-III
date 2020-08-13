@@ -36,8 +36,8 @@ public class Combo extends Producto {
         return losPlatos;
     }
 
-    public void setLosPlatos(ArrayList<Plato> losPlatos) {
-        this.losPlatos = losPlatos;
+    public void setLosPlatos(Plato platillo) {
+        losPlatos.add(platillo);
     }
 
     @Override

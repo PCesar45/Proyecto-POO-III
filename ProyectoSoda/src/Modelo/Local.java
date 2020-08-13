@@ -22,6 +22,23 @@ public class Local {
         }
         return false;
     }
+    
+    public boolean cargarDatos(Fichero nombre){
+        StrategyLecturaArchivo strategy = null;
+        switch(nombre){
+            case ADMINISTRADORES:
+                strategy = new LeerAdmins();
+                break;
+            case PLATILLOS:
+                strategy = new LeerPlatos();
+                break;
+            case COMBOS:
+                strategy = new LeerCombos();
+                break;
+        }
+        
+        return strategy.Recuperar();
+    }
 
     public ArrayList<Administrador> getAdmins() {
         return Admins;

@@ -1,0 +1,7 @@
+
+package Modelo;
+
+
+public enum Fichero {
+    ADMINISTRADORES,PLATILLOS,COMBOS,CLIENTES_VISITANTES,HISTORIAL;
+}
