@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 
 public class Local {
-    
+    private int codPedido=0;
     private String nombre;
     private int capacidad;
     private double aforo;
@@ -56,4 +56,14 @@ public class Local {
     public void agregarPedido(Pedido elPedido){
         pedidos.add(elPedido);
     }
+
+    public int getCodPedido() {
+        return codPedido;
+    }
+
+    public void setCodPedido(int codPedido) {
+        this.codPedido = codPedido;
+    }
+    
+    
 }
