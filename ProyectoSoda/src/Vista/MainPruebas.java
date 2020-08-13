@@ -55,7 +55,9 @@ public class MainPruebas {
 //        unCombo.getLosPlatos().add(papas);
 //        
 //        System.out.println(unCombo.toString());
-
+        
+        //Lectura y Carga de los Archivos
+        
         Singleton.getInstance().getMiLocal().cargarDatos(Fichero.ADMINISTRADORES);
         System.out.println(Singleton.getInstance().getMiLocal().getAdmins().toString());
         
@@ -65,60 +67,70 @@ public class MainPruebas {
         Singleton.getInstance().getMiLocal().cargarDatos(Fichero.COMBOS);
         System.out.println(Singleton.getInstance().getMiLocal().getMenu().VerCombos().toString());
         
-        //Tabla
-      
-        boolean combos=true;
-        Menus vista=new Menus();
-        DefaultTableModel modelo=new DefaultTableModel();
-        JTable tabla=vista.DatosExcel;
-        tabla.setModel(modelo);
-        ArrayList<Plato> platos=Singleton.getInstance().getMiLocal().getMenu().VerPlatos();
-        ArrayList<Combo> combost=Singleton.getInstance().getMiLocal().getMenu().VerCombos();
-        modelo.addColumn("Codigo");
-        modelo.addColumn("Nombre");
-        modelo.addColumn("Precio");
-        modelo.addColumn("Disponibilidad");
-        if(combos)
-            modelo.addColumn("Descripcion");
-        Object[]ListaColumna=new Object[9999];
-         //int cont;
-         System.out.println(platos.size());
-        if(combos==true){
-            for(int j=0;j!=combost.size();j++){
-               /// System.out.println("1");
-                ListaColumna[0]=combost.get(j).getCodigo();
-                ListaColumna[1]=combost.get(j).getNombre();
-                ListaColumna[2]=combost.get(j).getPrecio();
-                if(combost.get(j).isDisponibilidad()==false){
-                    ListaColumna[3]="No esta disponible";
-                }
-                else{
-                    ListaColumna[3]="Disponible";
-                }
-                ListaColumna[4]=combost.get(j).getDescripcion();
-                modelo.addRow(ListaColumna);
-             }
-            
-        }
-        else{
-             for(int j=0;j!=platos.size();j++){
-             //   System.out.println("1");
-                ListaColumna[0]=platos.get(j).getCodigo();
-                ListaColumna[1]=platos.get(j).getNombre();
-                ListaColumna[2]=platos.get(j).getPrecio();
-                if(platos.get(j).isDisponibilidad()==false){
-                    ListaColumna[3]="No esta disponible";
-                }
-                else{
-                    ListaColumna[3]="Disponible";
-                }
-
-                modelo.addRow(ListaColumna);
-             }
-            
-        }
+        //Despliegue de los ventanas
         
-         vista.setVisible(true);
+        Logeo v1 = new Logeo();
+        v1.setVisible(true);
+        
+        VistaCliente v2 = new VistaCliente();
+        v2.setVisible(true);
+        
+        
+        
+        //Tabla - IMPORTANTE
+      
+//        boolean combos=true;
+//        Menus vista=new Menus();
+//        DefaultTableModel modelo=new DefaultTableModel();
+//        JTable tabla=vista.DatosExcel;
+//        tabla.setModel(modelo);
+//        ArrayList<Plato> platos=Singleton.getInstance().getMiLocal().getMenu().VerPlatos();
+//        ArrayList<Combo> combost=Singleton.getInstance().getMiLocal().getMenu().VerCombos();
+//        modelo.addColumn("Codigo");
+//        modelo.addColumn("Nombre");
+//        modelo.addColumn("Precio");
+//        modelo.addColumn("Disponibilidad");
+//        if(combos)
+//            modelo.addColumn("Descripcion");
+//        Object[]ListaColumna=new Object[9999];
+//         //int cont;
+//         System.out.println(platos.size());
+//        if(combos==true){
+//            for(int j=0;j!=combost.size();j++){
+//               /// System.out.println("1");
+//                ListaColumna[0]=combost.get(j).getCodigo();
+//                ListaColumna[1]=combost.get(j).getNombre();
+//                ListaColumna[2]=combost.get(j).getPrecio();
+//                if(combost.get(j).isDisponibilidad()==false){
+//                    ListaColumna[3]="No esta disponible";
+//                }
+//                else{
+//                    ListaColumna[3]="Disponible";
+//                }
+//                ListaColumna[4]=combost.get(j).getDescripcion();
+//                modelo.addRow(ListaColumna);
+//             }
+//            
+//        }
+//        else{
+//             for(int j=0;j!=platos.size();j++){
+//             //   System.out.println("1");
+//                ListaColumna[0]=platos.get(j).getCodigo();
+//                ListaColumna[1]=platos.get(j).getNombre();
+//                ListaColumna[2]=platos.get(j).getPrecio();
+//                if(platos.get(j).isDisponibilidad()==false){
+//                    ListaColumna[3]="No esta disponible";
+//                }
+//                else{
+//                    ListaColumna[3]="Disponible";
+//                }
+//
+//                modelo.addRow(ListaColumna);
+//             }
+//            
+//        }
+//        
+//         vista.setVisible(true);
         
         
     }

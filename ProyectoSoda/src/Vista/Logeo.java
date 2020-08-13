@@ -5,6 +5,9 @@
  */
 package Vista;
 
+import Controlador.Singleton;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Andrés
@@ -31,7 +34,7 @@ public class Logeo extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         btnEntrarAdmin = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        txtCodigoAdm = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -51,7 +54,7 @@ public class Logeo extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
         jLabel2.setText("Por favor, ingrese el código suministrado");
 
-        jLabel3.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 153, 0));
         jLabel3.setText("Administración");
 
@@ -65,7 +68,7 @@ public class Logeo extends javax.swing.JFrame {
                     .addGroup(pnlLogeoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(pnlLogeoLayout.createSequentialGroup()
                             .addGap(140, 140, 140)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtCodigoAdm, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(pnlLogeoLayout.createSequentialGroup()
                             .addGap(156, 156, 156)
                             .addComponent(btnEntrarAdmin))
@@ -86,10 +89,10 @@ public class Logeo extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel2)
                 .addGap(26, 26, 26)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtCodigoAdm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(36, 36, 36)
                 .addComponent(btnEntrarAdmin)
-                .addContainerGap(48, Short.MAX_VALUE))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -107,7 +110,12 @@ public class Logeo extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnEntrarAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarAdminActionPerformed
-        //System.out.println("Estoy entrando como Admin");
+        if(Singleton.getInstance().getMiLocal().validarAdmin(Long.parseLong(txtCodigoAdm.getText()))){
+            VistaAdmin vAdm = new VistaAdmin();
+            vAdm.setVisible(true);
+        }else{
+            JOptionPane.showMessageDialog(null, "Codigo de Acceso Denegado", "Login", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_btnEntrarAdminActionPerformed
 
     /**
@@ -151,7 +159,7 @@ public class Logeo extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JPanel pnlLogeo;
+    private javax.swing.JTextField txtCodigoAdm;
     // End of variables declaration//GEN-END:variables
 }

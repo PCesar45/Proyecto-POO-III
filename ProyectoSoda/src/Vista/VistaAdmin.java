@@ -81,7 +81,7 @@ public class VistaAdmin extends javax.swing.JFrame {
         jRadioButton4 = new javax.swing.JRadioButton();
         jRadioButton5 = new javax.swing.JRadioButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Administrador");
 
         jLabel2.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         jLabel2.setText("Realize las acciones correspondientes con la gestión de la Sodita");
@@ -144,10 +144,10 @@ public class VistaAdmin extends javax.swing.JFrame {
                         .addGap(28, 28, 28)
                         .addComponent(jLabel10))
                     .addGroup(pnlGReservacionesLayout.createSequentialGroup()
-                        .addGap(76, 76, 76)
+                        .addGap(64, 64, 64)
                         .addGroup(pnlGReservacionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
+                            .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, 195, Short.MAX_VALUE)
                             .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(47, Short.MAX_VALUE))
         );
@@ -164,7 +164,7 @@ public class VistaAdmin extends javax.swing.JFrame {
                 .addComponent(jButton6)
                 .addGap(18, 18, 18)
                 .addComponent(jButton7)
-                .addContainerGap(91, Short.MAX_VALUE))
+                .addContainerGap(73, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Reservaciones", pnlGReservaciones);
@@ -239,16 +239,16 @@ public class VistaAdmin extends javax.swing.JFrame {
                         .addGap(82, 82, 82)
                         .addComponent(jLabel9))
                     .addGroup(pnlGMenuLayout.createSequentialGroup()
-                        .addGap(125, 125, 125)
-                        .addGroup(pnlGMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jButton2)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(pnlGMenuLayout.createSequentialGroup()
                         .addGap(93, 93, 93)
                         .addComponent(jLabel3))
                     .addGroup(pnlGMenuLayout.createSequentialGroup()
                         .addGap(23, 23, 23)
-                        .addComponent(jLabel8)))
+                        .addComponent(jLabel8))
+                    .addGroup(pnlGMenuLayout.createSequentialGroup()
+                        .addGap(113, 113, 113)
+                        .addGroup(pnlGMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 134, Short.MAX_VALUE))))
                 .addContainerGap(31, Short.MAX_VALUE))
         );
         pnlGMenuLayout.setVerticalGroup(
@@ -262,9 +262,9 @@ public class VistaAdmin extends javax.swing.JFrame {
                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(40, 40, 40)
                 .addComponent(jButton1)
-                .addGap(18, 18, 18)
+                .addGap(26, 26, 26)
                 .addComponent(jButton2)
-                .addContainerGap(99, Short.MAX_VALUE))
+                .addContainerGap(73, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Menú", pnlGMenu);
@@ -303,10 +303,10 @@ public class VistaAdmin extends javax.swing.JFrame {
                         .addGap(131, 131, 131)
                         .addComponent(jLabel4))
                     .addGroup(pnlGPedidosLayout.createSequentialGroup()
-                        .addGap(112, 112, 112)
-                        .addGroup(pnlGPedidosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton4))))
+                        .addGap(89, 89, 89)
+                        .addGroup(pnlGPedidosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, 199, Short.MAX_VALUE)
+                            .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnlGPedidosLayout.setVerticalGroup(
@@ -320,9 +320,9 @@ public class VistaAdmin extends javax.swing.JFrame {
                 .addComponent(jLabel12)
                 .addGap(37, 37, 37)
                 .addComponent(jButton4)
-                .addGap(18, 18, 18)
+                .addGap(27, 27, 27)
                 .addComponent(jButton3)
-                .addContainerGap(104, Short.MAX_VALUE))
+                .addContainerGap(77, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Pedidos", pnlGPedidos);
