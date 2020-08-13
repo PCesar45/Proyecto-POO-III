@@ -22,5 +22,53 @@ public class Pedido extends Servicio {
         this.numOrden = numOrden;
         this.direccion = direccion;
     }
+
+    public int getNumOrden() {
+        return numOrden;
+    }
+
+    public void setNumOrden(int numOrden) {
+        this.numOrden = numOrden;
+    }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
+    public ArrayList<Pedido> getPedidos() {
+        return pedidos;
+    }
+
+    public void setPedidos(ArrayList<Pedido> pedidos) {
+        this.pedidos = pedidos;
+    }
+
+    public Date getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
+    }
+
+    public int getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(int telefono) {
+        this.telefono = telefono;
+    }
+
+    public long getIdentificacion() {
+        return identificacion;
+    }
+
+    public void setIdentificacion(long identificacion) {
+        this.identificacion = identificacion;
+    }
     
 }
