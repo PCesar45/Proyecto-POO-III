@@ -5,6 +5,14 @@
  */
 package Vista;
 
+import Controlador.Singleton;
+import Modelo.Combo;
+import Modelo.FactoryProducto;
+import Modelo.Fichero;
+import Modelo.Plato;
+import Modelo.TPlato;
+import Modelo.TProducto;
+
 /**
  *
  * @author Andrés
@@ -30,6 +38,35 @@ public class Agregar extends javax.swing.JFrame {
         pnlAgregar = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jTabbedPane1 = new javax.swing.JTabbedPane();
+        jPanel1 = new javax.swing.JPanel();
+        lblCodigoPlt = new javax.swing.JLabel();
+        lblNombrePlt = new javax.swing.JLabel();
+        lblDisponibilidadPlt = new javax.swing.JLabel();
+        lblPrecioPlt = new javax.swing.JLabel();
+        tfCodigoPlt = new javax.swing.JTextField();
+        tfNombrePlt = new javax.swing.JTextField();
+        cbDisponibilidadPlt = new javax.swing.JComboBox<>();
+        tfPrecioPlt = new javax.swing.JTextField();
+        lblTipoPlt = new javax.swing.JLabel();
+        cbTipoPlt = new javax.swing.JComboBox<>();
+        btnGuardarPlato = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        lblCodigocmb = new javax.swing.JLabel();
+        lblNombreCmb = new javax.swing.JLabel();
+        lblDisponibilidadCmb = new javax.swing.JLabel();
+        lblPrecioCmb = new javax.swing.JLabel();
+        tfCodigoCmb = new javax.swing.JTextField();
+        tfNombreCmb = new javax.swing.JTextField();
+        tfPrecioCmb = new javax.swing.JTextField();
+        cbDisponibilidadCmb = new javax.swing.JComboBox<>();
+        jLabel3 = new javax.swing.JLabel();
+        tfDescripcionCmb = new javax.swing.JTextField();
+        btnGuardarCombo = new javax.swing.JButton();
+        lblPlato1 = new javax.swing.JLabel();
+        tfPlato1 = new javax.swing.JTextField();
+        lblPlato2 = new javax.swing.JLabel();
+        tfPlato2 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -37,20 +74,20 @@ public class Agregar extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(0, 153, 153));
         jLabel1.setText("Registrar");
 
-        jLabel2.setText("Ingrese los datos solicitados para registrar un nueo item del menú");
+        jLabel2.setText("Ingrese los datos solicitados para registrar un nuevo item del menú");
 
         javax.swing.GroupLayout pnlAgregarLayout = new javax.swing.GroupLayout(pnlAgregar);
         pnlAgregar.setLayout(pnlAgregarLayout);
         pnlAgregarLayout.setHorizontalGroup(
             pnlAgregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlAgregarLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(117, 117, 117))
             .addGroup(pnlAgregarLayout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addComponent(jLabel2)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlAgregarLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(134, 134, 134))
         );
         pnlAgregarLayout.setVerticalGroup(
             pnlAgregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -61,25 +98,266 @@ public class Agregar extends javax.swing.JFrame {
                 .addGap(0, 11, Short.MAX_VALUE))
         );
 
+        lblCodigoPlt.setText("Codigo:");
+
+        lblNombrePlt.setText("Nombre:");
+
+        lblDisponibilidadPlt.setText("Disponibilidad:");
+
+        lblPrecioPlt.setText("Precio:");
+
+        cbDisponibilidadPlt.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Disponible", "No Disponible" }));
+
+        lblTipoPlt.setText("Tipo:");
+
+        cbTipoPlt.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Entrada", "Comida", "Bebida", "Postre" }));
+
+        btnGuardarPlato.setText("Guardar Plato");
+        btnGuardarPlato.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardarPlatoActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(lblNombrePlt)
+                    .addComponent(lblDisponibilidadPlt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblPrecioPlt)
+                    .addComponent(lblTipoPlt)
+                    .addComponent(lblCodigoPlt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(49, 49, 49)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(tfCodigoPlt)
+                    .addComponent(tfNombrePlt)
+                    .addComponent(cbDisponibilidadPlt, 0, 1, Short.MAX_VALUE)
+                    .addComponent(tfPrecioPlt)
+                    .addComponent(cbTipoPlt, 0, 85, Short.MAX_VALUE))
+                .addContainerGap(273, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnGuardarPlato)
+                .addContainerGap())
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblCodigoPlt)
+                    .addComponent(tfCodigoPlt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblNombrePlt)
+                    .addComponent(tfNombrePlt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblDisponibilidadPlt)
+                    .addComponent(cbDisponibilidadPlt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblPrecioPlt)
+                    .addComponent(tfPrecioPlt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cbTipoPlt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblTipoPlt))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnGuardarPlato))
+        );
+
+        jTabbedPane1.addTab("Registrar Plato", jPanel1);
+
+        lblCodigocmb.setText("Codigo:");
+
+        lblNombreCmb.setText("Nombre:");
+
+        lblDisponibilidadCmb.setText("Disponibilidad:");
+
+        lblPrecioCmb.setText("Precio:");
+
+        cbDisponibilidadCmb.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Disponible", "No Disponible" }));
+
+        jLabel3.setText("Descripcion:");
+
+        btnGuardarCombo.setText("Guardar Combo");
+        btnGuardarCombo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardarComboActionPerformed(evt);
+            }
+        });
+
+        lblPlato1.setText("Plato 1:");
+
+        tfPlato1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfPlato1ActionPerformed(evt);
+            }
+        });
+
+        lblPlato2.setText("Plato 2:");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblCodigocmb)
+                    .addComponent(lblNombreCmb)
+                    .addComponent(lblDisponibilidadCmb)
+                    .addComponent(lblPrecioCmb)
+                    .addComponent(jLabel3))
+                .addGap(49, 49, 49)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(tfDescripcionCmb, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(cbDisponibilidadCmb, javax.swing.GroupLayout.Alignment.LEADING, 0, 1, Short.MAX_VALUE)
+                            .addComponent(tfCodigoCmb, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 85, Short.MAX_VALUE)
+                            .addComponent(tfNombreCmb, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tfPrecioCmb, javax.swing.GroupLayout.Alignment.LEADING))
+                        .addGap(79, 79, 79)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblPlato1)
+                            .addComponent(lblPlato2))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnGuardarCombo)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(tfPlato1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 85, Short.MAX_VALUE)
+                        .addComponent(tfPlato2, javax.swing.GroupLayout.Alignment.LEADING)))
+                .addContainerGap())
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblCodigocmb)
+                    .addComponent(tfCodigoCmb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblPlato1)
+                    .addComponent(tfPlato1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblNombreCmb)
+                    .addComponent(tfNombreCmb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblPlato2)
+                    .addComponent(tfPlato2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cbDisponibilidadCmb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblDisponibilidadCmb))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tfPrecioCmb, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblPrecioCmb))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(tfDescripcionCmb, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE))
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(btnGuardarCombo))
+        );
+
+        jTabbedPane1.addTab("Registrar Combo", jPanel2);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(109, 109, 109)
-                .addComponent(pnlAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(127, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 490, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pnlAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(45, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(21, 21, 21)
                 .addComponent(pnlAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(327, Short.MAX_VALUE))
+                .addGap(39, 39, 39)
+                .addComponent(jTabbedPane1)
+                .addGap(30, 30, 30))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void tfPlato1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfPlato1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfPlato1ActionPerformed
+
+    private void btnGuardarPlatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarPlatoActionPerformed
+        // TODO add your handling code here:
+        int codigo=Integer.parseInt(tfCodigoPlt.getText());
+        String nombre=tfNombrePlt.getText();
+        String tf=cbDisponibilidadPlt.getSelectedItem().toString();
+        boolean disp=false;
+        if("Disponible".equals(tf)){disp=true;}
+        float precio=Float.parseFloat(tfPrecioPlt.getText());
+        String item= cbTipoPlt.getSelectedItem().toString();
+        TPlato tipo;
+        switch(item){
+            case "ENTRADA":
+                tipo=TPlato.ENTRADA;
+                break;
+            case "COMIDA":
+                tipo=TPlato.COMIDA;
+                break;
+            case "BEBIDA":
+                tipo=TPlato.BEBIDA;
+                break;
+            case "POSTRE":
+                tipo=TPlato.POSTRE;
+                break;
+            default:
+                tipo=TPlato.COMIDA;
+                break;
+        }
+        Plato platillo=(Plato) FactoryProducto.getProducto(TProducto.PLATO, codigo, nombre, disp, precio);
+        platillo.setTipo(tipo);
+        Singleton.getInstance().getMiLocal().getMenu().RegistrarPlato(platillo);
+        System.out.println("Guardando Plato");
+        System.out.println(Singleton.getInstance().getMiLocal().getMenu().VerPlatos().toString());
+    }//GEN-LAST:event_btnGuardarPlatoActionPerformed
+
+    private void btnGuardarComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarComboActionPerformed
+        // TODO add your handling code here:
+        int codigo=Integer.parseInt(tfCodigoCmb.getText());
+        String nombre=tfNombreCmb.getText();
+        String tf=cbDisponibilidadCmb.getSelectedItem().toString();
+        boolean dispo=false;
+        if("Disponible".equals(tf)){dispo=true;}
+        float precio=Float.parseFloat(tfPrecioCmb.getText());
+        String desc=tfDescripcionCmb.getText();
+        int plato1=Integer.parseInt(tfPlato1.getText());
+        int plato2=Integer.parseInt(tfPlato2.getText());
+        if((Singleton.getInstance().getMiLocal().getMenu().getPlato(plato1)!=null)&&(Singleton.getInstance().getMiLocal().getMenu().getPlato(plato2)!=null)){
+            Combo combito=(Combo) FactoryProducto.getProducto(TProducto.COMBO, codigo, nombre, dispo, precio);
+            combito.setDescripcion(desc);
+            combito.setLosPlatos(Singleton.getInstance().getMiLocal().getMenu().getPlato(plato1));
+            combito.setLosPlatos(Singleton.getInstance().getMiLocal().getMenu().getPlato(plato2));
+            Singleton.getInstance().getMiLocal().getMenu().RegistrarCombo(combito);
+            System.out.println(Singleton.getInstance().getMiLocal().getMenu().VerCombos().toString());
+        }
+        else{
+            System.out.println("Platos no validos");
+        }
+        
+    }//GEN-LAST:event_btnGuardarComboActionPerformed
 
     /**
      * @param args the command line arguments
@@ -117,8 +395,37 @@ public class Agregar extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnGuardarCombo;
+    private javax.swing.JButton btnGuardarPlato;
+    private javax.swing.JComboBox<String> cbDisponibilidadCmb;
+    private javax.swing.JComboBox<String> cbDisponibilidadPlt;
+    private javax.swing.JComboBox<String> cbTipoPlt;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JLabel lblCodigoPlt;
+    private javax.swing.JLabel lblCodigocmb;
+    private javax.swing.JLabel lblDisponibilidadCmb;
+    private javax.swing.JLabel lblDisponibilidadPlt;
+    private javax.swing.JLabel lblNombreCmb;
+    private javax.swing.JLabel lblNombrePlt;
+    private javax.swing.JLabel lblPlato1;
+    private javax.swing.JLabel lblPlato2;
+    private javax.swing.JLabel lblPrecioCmb;
+    private javax.swing.JLabel lblPrecioPlt;
+    private javax.swing.JLabel lblTipoPlt;
     private javax.swing.JPanel pnlAgregar;
+    private javax.swing.JTextField tfCodigoCmb;
+    private javax.swing.JTextField tfCodigoPlt;
+    private javax.swing.JTextField tfDescripcionCmb;
+    private javax.swing.JTextField tfNombreCmb;
+    private javax.swing.JTextField tfNombrePlt;
+    private javax.swing.JTextField tfPlato1;
+    private javax.swing.JTextField tfPlato2;
+    private javax.swing.JTextField tfPrecioCmb;
+    private javax.swing.JTextField tfPrecioPlt;
     // End of variables declaration//GEN-END:variables
 }
