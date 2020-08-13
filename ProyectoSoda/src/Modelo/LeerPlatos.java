@@ -29,7 +29,10 @@ public class LeerPlatos implements StrategyLecturaArchivo {
                 String nomplato=getNombrePlato(linea);
                 boolean dispo=getDisponibilidadPlato(linea);
                 float precio=getPrecioPlato(linea);
-                Singleton.getInstance().getMiLocal().getMenu().RegistrarPlato(new Plato(tipo, codplato, nomplato, dispo, precio));
+                //Singleton.getInstance().getMiLocal().getMenu().RegistrarPlato(new Plato(tipo, codplato, nomplato, dispo, precio));
+                Plato unPlato = (Plato) FactoryProducto.getProducto(TProducto.PLATO, codplato, nomplato, dispo, precio);
+                unPlato.setTipo(tipo);
+                Singleton.getInstance().getMiLocal().getMenu().RegistrarPlato(unPlato);
             }
         }
         catch(FileNotFoundException e ){

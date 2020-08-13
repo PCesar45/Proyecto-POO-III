@@ -32,7 +32,9 @@ public class LeerCombos implements StrategyLecturaArchivo{
                 int plato1=getPlatoCombo(linea);
                 int plato2=getSegundoPlatoCombo(linea);
                 if((Singleton.getInstance().getMiLocal().getMenu().getPlato(plato1)!=null)&&(Singleton.getInstance().getMiLocal().getMenu().getPlato(plato2)!=null)){
-                    Combo cmb= new Combo(desc, cod, nombre, dispo, precio);
+                    Combo cmb= (Combo) FactoryProducto.getProducto(TProducto.COMBO, cod, nombre, dispo, precio);
+                    //Combo cmb= new Combo(desc, cod, nombre, dispo, precio);
+                    cmb.setDescripcion(desc);
                     cmb.setLosPlatos(Singleton.getInstance().getMiLocal().getMenu().getPlato(plato1));
                     cmb.setLosPlatos(Singleton.getInstance().getMiLocal().getMenu().getPlato(plato2));
                     Singleton.getInstance().getMiLocal().getMenu().RegistrarCombo(cmb);
