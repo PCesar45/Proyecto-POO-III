@@ -5,6 +5,15 @@
  */
 package Vista;
 
+import Controlador.Singleton;
+import Modelo.Combo;
+import Modelo.LeerCombos;
+import Modelo.LeerPlatos;
+import Modelo.Plato;
+import java.util.ArrayList;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Andrés
@@ -222,8 +231,18 @@ public class VistaAdmin extends javax.swing.JFrame {
         jLabel3.setText("Gestionar el Menú ofrecido");
 
         jButton1.setText("Ver Platos");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Ver Combos");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jLabel8.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
         jLabel8.setText("Desde acá, usted puede realizar acciones como ver el menu");
@@ -617,6 +636,86 @@ public class VistaAdmin extends javax.swing.JFrame {
     private void rbHistorial2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbHistorial2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_rbHistorial2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        LeerPlatos plts= new LeerPlatos();
+        plts.Recuperar();
+         
+        Menus vista=new Menus();
+        DefaultTableModel modelo=new DefaultTableModel();
+        JTable tabla=vista.DatosExcel;
+        tabla.setModel(modelo);
+        ArrayList<Plato> platos=Singleton.getInstance().getMiLocal().getMenu().VerPlatos();
+     //   ArrayList<Combo> combost=Singleton.getInstance().getMiLocal().getMenu().VerCombos();
+        vista.setModicar(true);
+        modelo.addColumn("Codigo");
+        modelo.addColumn("Nombre");
+        modelo.addColumn("Precio");
+        modelo.addColumn("Disponibilidad");
+        Object[]ListaColumna=new Object[9999];
+        for(int j=0;j!=platos.size();j++){
+             //   System.out.println("1");
+                ListaColumna[0]=platos.get(j).getCodigo();
+                ListaColumna[1]=platos.get(j).getNombre();
+                ListaColumna[2]=platos.get(j).getPrecio();
+                if(platos.get(j).isDisponibilidad()==false){
+                    ListaColumna[3]="No esta disponible";
+                }
+                else{
+                    ListaColumna[3]="Disponible";
+                }
+
+                modelo.addRow(ListaColumna);
+             }
+            
+        
+        
+         vista.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+       
+       
+//        
+//        //Carga los combos
+        LeerCombos p1 = new LeerCombos();
+        p1.Recuperar();
+        boolean combos=true;
+        Menus vista=new Menus();
+        DefaultTableModel modelo=new DefaultTableModel();
+        JTable tabla=vista.DatosExcel;
+        tabla.setModel(modelo);
+        vista.setModicar(true);
+        //ArrayList<Plato> platos=Singleton.getInstance().getMiLocal().getMenu().VerPlatos();
+        ArrayList<Combo> combost=Singleton.getInstance().getMiLocal().getMenu().VerCombos();
+        modelo.addColumn("Codigo");
+        modelo.addColumn("Nombre");
+        modelo.addColumn("Precio");
+        modelo.addColumn("Disponibilidad");
+        if(combos)
+            modelo.addColumn("Descripcion");
+        Object[]ListaColumna=new Object[9999];
+         //int cont;
+        // System.out.println(platos.size());
+        if(combos==true){
+            for(int j=0;j!=combost.size();j++){
+               /// System.out.println("1");
+                ListaColumna[0]=combost.get(j).getCodigo();
+                ListaColumna[1]=combost.get(j).getNombre();
+                ListaColumna[2]=combost.get(j).getPrecio();
+                if(combost.get(j).isDisponibilidad()==false){
+                    ListaColumna[3]="No esta disponible";
+                }
+                else{
+                    ListaColumna[3]="Disponible";
+                }
+                ListaColumna[4]=combost.get(j).getDescripcion();
+                modelo.addRow(ListaColumna);
+             }
+            
+        }
+        vista.setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
