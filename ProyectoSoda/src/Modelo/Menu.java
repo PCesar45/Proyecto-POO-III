@@ -50,5 +50,14 @@ public class Menu {
         }
         return null;
     }
+    public Combo getCombo(int cod){
+        for(Combo cmb:listCombo){
+            if(cmb.getCodigo()==cod){
+                return cmb;
+            }
+        }
+        return null;
+    }
+    
 }
 

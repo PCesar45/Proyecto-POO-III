@@ -15,7 +15,7 @@ import java.util.Date;
 public class Pedido extends Servicio {
     private int numOrden;
     private String direccion;
-    private ArrayList<Pedido> pedidos= new ArrayList<>();
+    private ArrayList<Integer> pedidos= new ArrayList<>();
 
     public Pedido(int numOrden, String direccion, Date fecha, int telefono, long identificacion) {
         super(fecha, telefono, identificacion);
@@ -39,11 +39,11 @@ public class Pedido extends Servicio {
         this.direccion = direccion;
     }
 
-    public ArrayList<Pedido> getPedidos() {
+    public ArrayList<Integer> getPedidos() {
         return pedidos;
     }
 
-    public void setPedidos(ArrayList<Pedido> pedidos) {
+    public void setPedidos(ArrayList<Integer> pedidos) {
         this.pedidos = pedidos;
     }
 
@@ -69,11 +69,6 @@ public class Pedido extends Servicio {
 
     public void setIdentificacion(long identificacion) {
         this.identificacion = identificacion;
-    }
-
-    @Override
-    public String toString() {
-        return "Pedido{" + "numOrden=" + numOrden + ", direccion=" + direccion + ", pedidos=" + pedidos + '}';
     }
     
 }

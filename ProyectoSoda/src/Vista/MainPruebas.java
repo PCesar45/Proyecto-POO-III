@@ -69,13 +69,13 @@ public class MainPruebas {
         
         //Despliegue de los ventanas
         
-        
+        Logeo v1 = new Logeo();
+        v1.setVisible(true);
         
         VistaCliente v2 = new VistaCliente();
         v2.setVisible(true);
         
-        Logeo v1 = new Logeo();
-        v1.setVisible(true);
+        
         
         //Tabla - IMPORTANTE
       
