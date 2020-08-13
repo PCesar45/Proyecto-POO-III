@@ -64,12 +64,13 @@ public class MainPruebas {
         
         //Tabla
       
-        boolean combos=false;
+        boolean combos=true;
         Menus vista=new Menus();
         DefaultTableModel modelo=new DefaultTableModel();
         JTable tabla=vista.DatosExcel;
         tabla.setModel(modelo);
         ArrayList<Plato> platos=Singleton.getInstance().getMiLocal().getMenu().VerPlatos();
+        ArrayList<Combo> combost=Singleton.getInstance().getMiLocal().getMenu().VerCombos();
         modelo.addColumn("Codigo");
         modelo.addColumn("Nombre");
         modelo.addColumn("Precio");
@@ -79,9 +80,26 @@ public class MainPruebas {
         Object[]ListaColumna=new Object[9999];
          //int cont;
          System.out.println(platos.size());
-        if(combos==false){
-            for(int j=0;j!=platos.size();j++){
-                System.out.println("1");
+        if(combos==true){
+            for(int j=0;j!=combost.size();j++){
+               /// System.out.println("1");
+                ListaColumna[0]=combost.get(j).getCodigo();
+                ListaColumna[1]=combost.get(j).getNombre();
+                ListaColumna[2]=combost.get(j).getPrecio();
+                if(combost.get(j).isDisponibilidad()==false){
+                    ListaColumna[3]="No esta disponible";
+                }
+                else{
+                    ListaColumna[3]="Disponible";
+                }
+                ListaColumna[4]=combost.get(j).getDescripcion();
+                modelo.addRow(ListaColumna);
+             }
+            
+        }
+        else{
+             for(int j=0;j!=platos.size();j++){
+             //   System.out.println("1");
                 ListaColumna[0]=platos.get(j).getCodigo();
                 ListaColumna[1]=platos.get(j).getNombre();
                 ListaColumna[2]=platos.get(j).getPrecio();
