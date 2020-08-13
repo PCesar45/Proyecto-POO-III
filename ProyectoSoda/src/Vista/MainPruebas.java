@@ -10,6 +10,9 @@ import Modelo.LeerPlatos;
 import Modelo.Plato;
 import Modelo.TPlato;
 import Modelo.TProducto;
+import java.util.ArrayList;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 
 
 /**
@@ -42,6 +45,43 @@ public class MainPruebas {
         
         System.out.println(unCombo.toString());
         
+        
+        //Tabla
+      
+        boolean combos=false;
+        Menus vista=new Menus();
+        DefaultTableModel modelo=new DefaultTableModel();
+        JTable tabla=vista.DatosExcel;
+        tabla.setModel(modelo);
+        ArrayList<Plato> platos=Singleton.getInstance().getMiLocal().getMenu().VerPlatos();
+        modelo.addColumn("Codigo");
+        modelo.addColumn("Nombre");
+        modelo.addColumn("Precio");
+        modelo.addColumn("Disponibilidad");
+        if(combos)
+            modelo.addColumn("Descripcion");
+        Object[]ListaColumna=new Object[9999];
+         //int cont;
+         System.out.println(platos.size());
+        if(combos==false){
+            for(int j=0;j!=platos.size();j++){
+                System.out.println("1");
+                ListaColumna[0]=platos.get(j).getCodigo();
+                ListaColumna[1]=platos.get(j).getNombre();
+                ListaColumna[2]=platos.get(j).getPrecio();
+                if(platos.get(j).isDisponibilidad()==false){
+                    ListaColumna[3]="No esta disponible";
+                }
+                else{
+                    ListaColumna[3]="Disponible";
+                }
+
+                modelo.addRow(ListaColumna);
+             }
+            
+        }
+        
+         vista.setVisible(true);
         
         
     }

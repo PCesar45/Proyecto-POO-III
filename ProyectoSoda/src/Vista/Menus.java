@@ -5,12 +5,9 @@
  */
 package Vista;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.io.File;
-import java.util.ArrayList;
-import javax.swing.JButton;
+
 import javax.swing.JOptionPane;
+
 
 
 
@@ -18,7 +15,7 @@ public class Menus extends javax.swing.JFrame {
     private boolean Modicar;
     public Menus() {
         initComponents();
-      
+        
     }
 
     public void setModicar(boolean Modicar) {
@@ -169,7 +166,10 @@ public class Menus extends javax.swing.JFrame {
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
-
+        
+        
+        
+      
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {

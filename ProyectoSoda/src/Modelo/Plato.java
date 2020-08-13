@@ -29,6 +29,22 @@ public class Plato extends Producto {
         this.tipo = tipo;
     }
 
+    public int getCodigo() {
+        return codigo;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public boolean isDisponibilidad() {
+        return disponibilidad;
+    }
+
+    public float getPrecio() {
+        return precio;
+    }
+    
     @Override
     public String toString() {
         return "Plato{" + "codigo: " + codigo + " nombre: "+ nombre + " precio: "+ precio + '}';
