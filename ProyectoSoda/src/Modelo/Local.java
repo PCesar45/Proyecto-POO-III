@@ -12,7 +12,8 @@ public class Local {
     private int maxOrdenes;
     private Menu menu= new Menu();
     private ArrayList<Administrador> Admins = new ArrayList<Administrador>();
-    
+    private ArrayList<Pedido> pedidos= new ArrayList<Pedido>();
+    private ArrayList<Reservacion> reservaciones= new ArrayList<Reservacion>();
     
     public boolean validarAdmin(long cod){
         for(Administrador unAdm: Admins){
@@ -46,5 +47,13 @@ public class Local {
     
     public Menu getMenu(){
         return menu;
+    }
+    
+    public ArrayList getListPedidos(){
+        return pedidos;
+    }
+    
+    public void agregarPedido(Pedido elPedido){
+        pedidos.add(elPedido);
     }
 }

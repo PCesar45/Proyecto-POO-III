@@ -5,9 +5,17 @@
  */
 package Vista;
 
+import Controlador.Singleton;
+import Modelo.Combo;
+import Modelo.LeerCombos;
+import Modelo.LeerPlatos;
+import Modelo.Plato;
 import java.awt.Image;
+import java.util.ArrayList;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -61,6 +69,7 @@ public class VistaCliente extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         btnMCMenu = new javax.swing.JButton();
         lblImg2 = new javax.swing.JLabel();
+        btnMCMenu1 = new javax.swing.JButton();
         pnlMCConsultas = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         txtCtarReserva = new javax.swing.JTextField();
@@ -176,7 +185,20 @@ public class VistaCliente extends javax.swing.JFrame {
         jLabel4.setText("Mira nuestro menú, haz tu pedido y te lo llevamos a donde estes!");
 
         btnMCMenu.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
-        btnMCMenu.setText("¡Ver Menú!");
+        btnMCMenu.setText("¡Ver Menú Platos!");
+        btnMCMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMCMenuActionPerformed(evt);
+            }
+        });
+
+        btnMCMenu1.setFont(new java.awt.Font("Comic Sans MS", 3, 14)); // NOI18N
+        btnMCMenu1.setText("¡Ver Menú combos!");
+        btnMCMenu1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMCMenu1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnlMCMenuLayout = new javax.swing.GroupLayout(pnlMCMenu);
         pnlMCMenu.setLayout(pnlMCMenuLayout);
@@ -189,22 +211,25 @@ public class VistaCliente extends javax.swing.JFrame {
                 .addGroup(pnlMCMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlMCMenuLayout.createSequentialGroup()
                         .addComponent(jLabel3)
-                        .addGap(112, 112, 112)
-                        .addComponent(btnMCMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())
+                        .addGap(85, 85, 85)
+                        .addComponent(btnMCMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlMCMenuLayout.createSequentialGroup()
                         .addComponent(jLabel4)
-                        .addGap(159, 159, 159))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnMCMenu1)
+                        .addGap(4, 4, 4))))
         );
         pnlMCMenuLayout.setVerticalGroup(
             pnlMCMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlMCMenuLayout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addGroup(pnlMCMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnMCMenu)
-                    .addComponent(jLabel3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(14, 14, 14)
+                .addGroup(pnlMCMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel3)
+                    .addComponent(btnMCMenu))
+                .addGap(13, 13, 13)
+                .addGroup(pnlMCMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnMCMenu1))
                 .addContainerGap(31, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlMCMenuLayout.createSequentialGroup()
                 .addContainerGap()
@@ -315,13 +340,91 @@ public class VistaCliente extends javax.swing.JFrame {
                 .addComponent(pnlMCEspacios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(pnlMCMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
                 .addComponent(pnlMCConsultas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(29, 29, 29))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnMCMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMCMenuActionPerformed
+        LeerPlatos plts= new LeerPlatos();
+        plts.Recuperar();
+         
+        Menus vista=new Menus();
+        DefaultTableModel modelo=new DefaultTableModel();
+        JTable tabla=vista.DatosExcel;
+        tabla.setModel(modelo);
+        ArrayList<Plato> platos=Singleton.getInstance().getMiLocal().getMenu().VerPlatos();
+     //   ArrayList<Combo> combost=Singleton.getInstance().getMiLocal().getMenu().VerCombos();
+        vista.setModicar(false);
+        modelo.addColumn("Codigo");
+        modelo.addColumn("Nombre");
+        modelo.addColumn("Precio");
+        modelo.addColumn("Disponibilidad");
+        Object[]ListaColumna=new Object[9999];
+        for(int j=0;j!=platos.size();j++){
+             //   System.out.println("1");
+                ListaColumna[0]=platos.get(j).getCodigo();
+                ListaColumna[1]=platos.get(j).getNombre();
+                ListaColumna[2]=platos.get(j).getPrecio();
+                if(platos.get(j).isDisponibilidad()==false){
+                    ListaColumna[3]="No esta disponible";
+                }
+                else{
+                    ListaColumna[3]="Disponible";
+                }
+
+                modelo.addRow(ListaColumna);
+             }
+            
+        
+        
+         vista.setVisible(true);
+    }//GEN-LAST:event_btnMCMenuActionPerformed
+
+    private void btnMCMenu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMCMenu1ActionPerformed
+        LeerPlatos plts= new LeerPlatos();
+        plts.Recuperar();
+        LeerCombos p1 = new LeerCombos();
+        p1.Recuperar();
+       
+        Menus vista=new Menus();
+        DefaultTableModel modelo=new DefaultTableModel();
+        JTable tabla=vista.DatosExcel;
+        tabla.setModel(modelo);
+        vista.setModicar(false);
+        //ArrayList<Plato> platos=Singleton.getInstance().getMiLocal().getMenu().VerPlatos();
+        ArrayList<Combo> combost=Singleton.getInstance().getMiLocal().getMenu().VerCombos();
+        modelo.addColumn("Codigo");
+        modelo.addColumn("Nombre");
+        modelo.addColumn("Precio");
+        modelo.addColumn("Disponibilidad");
+        
+        modelo.addColumn("Descripcion");
+        Object[]ListaColumna=new Object[9999];
+         //int cont;
+       System.out.println(combost.size());
+       
+            for(int j=0;j!=combost.size();j++){
+               /// System.out.println("1");
+                ListaColumna[0]=combost.get(j).getCodigo();
+                ListaColumna[1]=combost.get(j).getNombre();
+                ListaColumna[2]=combost.get(j).getPrecio();
+                if(combost.get(j).isDisponibilidad()==false){
+                    ListaColumna[3]="No esta disponible";
+                }
+                else{
+                    ListaColumna[3]="Disponible";
+                }
+                ListaColumna[4]=combost.get(j).getDescripcion();
+                modelo.addRow(ListaColumna);
+             }
+            
+        
+        vista.setVisible(true);
+    }//GEN-LAST:event_btnMCMenu1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -363,6 +466,7 @@ public class VistaCliente extends javax.swing.JFrame {
     private javax.swing.JButton btnCtaPedido;
     private javax.swing.JButton btnCtarReserva;
     private javax.swing.JButton btnMCMenu;
+    private javax.swing.JButton btnMCMenu1;
     private javax.swing.JButton btnMCReservas;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
