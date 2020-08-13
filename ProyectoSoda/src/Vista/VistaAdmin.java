@@ -27,19 +27,21 @@ public class VistaAdmin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        bgHistorial = new javax.swing.ButtonGroup();
+        bgReportes = new javax.swing.ButtonGroup();
         pnlMensaje = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        jTabbedPane1 = new javax.swing.JTabbedPane();
+        tpGestiones = new javax.swing.JTabbedPane();
         pnlGReservaciones = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
+        pnlGLocal = new javax.swing.JPanel();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
@@ -59,27 +61,27 @@ public class VistaAdmin extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
-        jTabbedPane2 = new javax.swing.JTabbedPane();
-        jPanel5 = new javax.swing.JPanel();
+        tbReportes = new javax.swing.JTabbedPane();
+        pnlHistorial = new javax.swing.JPanel();
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
-        jRadioButton9 = new javax.swing.JRadioButton();
-        jRadioButton10 = new javax.swing.JRadioButton();
-        jRadioButton11 = new javax.swing.JRadioButton();
-        jRadioButton12 = new javax.swing.JRadioButton();
-        jRadioButton13 = new javax.swing.JRadioButton();
-        jPanel4 = new javax.swing.JPanel();
+        rbHistorial4 = new javax.swing.JRadioButton();
+        rbHistorial2 = new javax.swing.JRadioButton();
+        rbHistorial1 = new javax.swing.JRadioButton();
+        rbHistorial5 = new javax.swing.JRadioButton();
+        rbHistorial3 = new javax.swing.JRadioButton();
+        pnlReportes = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
-        jRadioButton6 = new javax.swing.JRadioButton();
-        jRadioButton8 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton3 = new javax.swing.JRadioButton();
-        jRadioButton4 = new javax.swing.JRadioButton();
-        jRadioButton5 = new javax.swing.JRadioButton();
+        rbReporte7 = new javax.swing.JRadioButton();
+        rbReporte4 = new javax.swing.JRadioButton();
+        rbReporte2 = new javax.swing.JRadioButton();
+        rbReporte1 = new javax.swing.JRadioButton();
+        rbReporte5 = new javax.swing.JRadioButton();
+        rbReporte3 = new javax.swing.JRadioButton();
+        rbReporte6 = new javax.swing.JRadioButton();
 
         setTitle("Administrador");
 
@@ -117,7 +119,7 @@ public class VistaAdmin extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+        tpGestiones.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
 
         jLabel5.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         jLabel5.setText("Gestionar Reservaciones");
@@ -167,7 +169,7 @@ public class VistaAdmin extends javax.swing.JFrame {
                 .addContainerGap(73, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("Reservaciones", pnlGReservaciones);
+        tpGestiones.addTab("Reservaciones", pnlGReservaciones);
 
         jLabel13.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         jLabel13.setText("Gestionar Local");
@@ -180,29 +182,29 @@ public class VistaAdmin extends javax.swing.JFrame {
 
         jButton8.setText("Abrir");
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout pnlGLocalLayout = new javax.swing.GroupLayout(pnlGLocal);
+        pnlGLocal.setLayout(pnlGLocalLayout);
+        pnlGLocalLayout.setHorizontalGroup(
+            pnlGLocalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlGLocalLayout.createSequentialGroup()
+                .addGroup(pnlGLocalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlGLocalLayout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addComponent(jLabel15))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGroup(pnlGLocalLayout.createSequentialGroup()
                         .addGap(52, 52, 52)
                         .addComponent(jLabel14))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGroup(pnlGLocalLayout.createSequentialGroup()
                         .addGap(124, 124, 124)
                         .addComponent(jLabel13))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGroup(pnlGLocalLayout.createSequentialGroup()
                         .addGap(137, 137, 137)
                         .addComponent(jButton8)))
                 .addContainerGap(35, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        pnlGLocalLayout.setVerticalGroup(
+            pnlGLocalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlGLocalLayout.createSequentialGroup()
                 .addGap(28, 28, 28)
                 .addComponent(jLabel13)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -214,7 +216,7 @@ public class VistaAdmin extends javax.swing.JFrame {
                 .addContainerGap(160, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("Local", jPanel1);
+        tpGestiones.addTab("Local", pnlGLocal);
 
         jLabel3.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         jLabel3.setText("Gestionar el Menú ofrecido");
@@ -267,7 +269,7 @@ public class VistaAdmin extends javax.swing.JFrame {
                 .addContainerGap(73, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("Menú", pnlGMenu);
+        tpGestiones.addTab("Menú", pnlGMenu);
 
         jLabel4.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         jLabel4.setText("Gestionar Pedidos");
@@ -325,7 +327,7 @@ public class VistaAdmin extends javax.swing.JFrame {
                 .addContainerGap(77, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("Pedidos", pnlGPedidos);
+        tpGestiones.addTab("Pedidos", pnlGPedidos);
 
         jLabel6.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         jLabel6.setText("Gestiones");
@@ -340,7 +342,7 @@ public class VistaAdmin extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addComponent(jTabbedPane1)
+                .addComponent(tpGestiones)
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -349,14 +351,14 @@ public class VistaAdmin extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                .addComponent(tpGestiones, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                 .addGap(45, 45, 45))
         );
 
         jLabel7.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         jLabel7.setText("Reportes e Historial");
 
-        jTabbedPane2.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+        tbReportes.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
 
         jLabel18.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         jLabel18.setText("Historial");
@@ -364,25 +366,30 @@ public class VistaAdmin extends javax.swing.JFrame {
         jLabel19.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
         jLabel19.setText("Consultar información importante relacionada con el local");
 
-        jRadioButton9.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-        jRadioButton9.setText("Ganancias del mes");
+        bgHistorial.add(rbHistorial4);
+        rbHistorial4.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+        rbHistorial4.setText("Ganancias del mes");
 
-        jRadioButton10.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-        jRadioButton10.setText("Plato más solicitado");
-        jRadioButton10.addActionListener(new java.awt.event.ActionListener() {
+        bgHistorial.add(rbHistorial2);
+        rbHistorial2.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+        rbHistorial2.setText("Plato más solicitado");
+        rbHistorial2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton10ActionPerformed(evt);
+                rbHistorial2ActionPerformed(evt);
             }
         });
 
-        jRadioButton11.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-        jRadioButton11.setText("Clientes que visitaron el local");
+        bgHistorial.add(rbHistorial1);
+        rbHistorial1.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+        rbHistorial1.setText("Clientes que visitaron el local");
 
-        jRadioButton12.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-        jRadioButton12.setText("Día con más pedidos en el mes");
+        bgHistorial.add(rbHistorial5);
+        rbHistorial5.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+        rbHistorial5.setText("Día con más pedidos en el mes");
 
-        jRadioButton13.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-        jRadioButton13.setText("Combos más solicitado");
+        bgHistorial.add(rbHistorial3);
+        rbHistorial3.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+        rbHistorial3.setText("Combos más solicitado");
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -391,11 +398,11 @@ public class VistaAdmin extends javax.swing.JFrame {
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addContainerGap(20, Short.MAX_VALUE)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jRadioButton12)
-                    .addComponent(jRadioButton13)
-                    .addComponent(jRadioButton10)
-                    .addComponent(jRadioButton9)
-                    .addComponent(jRadioButton11)))
+                    .addComponent(rbHistorial5)
+                    .addComponent(rbHistorial3)
+                    .addComponent(rbHistorial2)
+                    .addComponent(rbHistorial4)
+                    .addComponent(rbHistorial1)))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -404,36 +411,36 @@ public class VistaAdmin extends javax.swing.JFrame {
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addGap(26, 26, 26)
-                        .addComponent(jRadioButton10))
-                    .addComponent(jRadioButton11))
+                        .addComponent(rbHistorial2))
+                    .addComponent(rbHistorial1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jRadioButton13)
+                .addComponent(rbHistorial3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jRadioButton9)
+                .addComponent(rbHistorial4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jRadioButton12))
+                .addComponent(rbHistorial5))
         );
 
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel5Layout.createSequentialGroup()
+        javax.swing.GroupLayout pnlHistorialLayout = new javax.swing.GroupLayout(pnlHistorial);
+        pnlHistorial.setLayout(pnlHistorialLayout);
+        pnlHistorialLayout.setHorizontalGroup(
+            pnlHistorialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlHistorialLayout.createSequentialGroup()
+                .addGroup(pnlHistorialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlHistorialLayout.createSequentialGroup()
                         .addGap(162, 162, 162)
                         .addComponent(jLabel18))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
+                    .addGroup(pnlHistorialLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel19))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
+                    .addGroup(pnlHistorialLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(81, Short.MAX_VALUE))
         );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
+        pnlHistorialLayout.setVerticalGroup(
+            pnlHistorialLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlHistorialLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel18)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -443,7 +450,7 @@ public class VistaAdmin extends javax.swing.JFrame {
                 .addContainerGap(85, Short.MAX_VALUE))
         );
 
-        jTabbedPane2.addTab("Historial", jPanel5);
+        tbReportes.addTab("Historial", pnlHistorial);
 
         jLabel16.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         jLabel16.setText("Reportes Diarios");
@@ -451,26 +458,33 @@ public class VistaAdmin extends javax.swing.JFrame {
         jLabel17.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
         jLabel17.setText("Marque el reporte de su interés: ");
 
-        jRadioButton6.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-        jRadioButton6.setText("Ganancias de hoy");
+        bgReportes.add(rbReporte7);
+        rbReporte7.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+        rbReporte7.setText("Ganancias de hoy");
 
-        jRadioButton8.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-        jRadioButton8.setText("Plato más vendido");
+        bgReportes.add(rbReporte4);
+        rbReporte4.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+        rbReporte4.setText("Plato más vendido");
 
-        jRadioButton2.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-        jRadioButton2.setText("Platos Vendidos hoy");
+        bgReportes.add(rbReporte2);
+        rbReporte2.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+        rbReporte2.setText("Platos Vendidos hoy");
 
-        jRadioButton1.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-        jRadioButton1.setText("Combo más vendido");
+        bgReportes.add(rbReporte1);
+        rbReporte1.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+        rbReporte1.setText("Combo más vendido");
 
-        jRadioButton3.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-        jRadioButton3.setText("Cantidad de órdenes de hoy");
+        bgReportes.add(rbReporte5);
+        rbReporte5.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+        rbReporte5.setText("Cantidad de órdenes de hoy");
 
-        jRadioButton4.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-        jRadioButton4.setText("Combos Vendidos hoy");
+        bgReportes.add(rbReporte3);
+        rbReporte3.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+        rbReporte3.setText("Combos Vendidos hoy");
 
-        jRadioButton5.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-        jRadioButton5.setText("Hora con más pedidos");
+        bgReportes.add(rbReporte6);
+        rbReporte6.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+        rbReporte6.setText("Hora con más pedidos");
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -479,13 +493,13 @@ public class VistaAdmin extends javax.swing.JFrame {
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addContainerGap(20, Short.MAX_VALUE)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jRadioButton3)
-                    .addComponent(jRadioButton4)
-                    .addComponent(jRadioButton2)
-                    .addComponent(jRadioButton8)
-                    .addComponent(jRadioButton5)
-                    .addComponent(jRadioButton1)
-                    .addComponent(jRadioButton6)))
+                    .addComponent(rbReporte5)
+                    .addComponent(rbReporte3)
+                    .addComponent(rbReporte2)
+                    .addComponent(rbReporte4)
+                    .addComponent(rbReporte6)
+                    .addComponent(rbReporte1)
+                    .addComponent(rbReporte7)))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -494,42 +508,42 @@ public class VistaAdmin extends javax.swing.JFrame {
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addGap(26, 26, 26)
-                        .addComponent(jRadioButton2))
-                    .addComponent(jRadioButton1))
+                        .addComponent(rbReporte2))
+                    .addComponent(rbReporte1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jRadioButton4)
+                .addComponent(rbReporte3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jRadioButton8)
+                .addComponent(rbReporte4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jRadioButton3)
+                .addComponent(rbReporte5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jRadioButton5)
+                .addComponent(rbReporte6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jRadioButton6)
+                .addComponent(rbReporte7)
                 .addContainerGap(26, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
+        javax.swing.GroupLayout pnlReportesLayout = new javax.swing.GroupLayout(pnlReportes);
+        pnlReportes.setLayout(pnlReportesLayout);
+        pnlReportesLayout.setHorizontalGroup(
+            pnlReportesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlReportesLayout.createSequentialGroup()
+                .addGroup(pnlReportesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlReportesLayout.createSequentialGroup()
                         .addGap(142, 142, 142)
                         .addComponent(jLabel16))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
+                    .addGroup(pnlReportesLayout.createSequentialGroup()
                         .addGap(22, 22, 22)
                         .addComponent(jLabel17)))
                 .addGap(0, 168, Short.MAX_VALUE))
-            .addGroup(jPanel4Layout.createSequentialGroup()
+            .addGroup(pnlReportesLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
+        pnlReportesLayout.setVerticalGroup(
+            pnlReportesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlReportesLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel16)
                 .addGap(18, 18, 18)
@@ -539,7 +553,7 @@ public class VistaAdmin extends javax.swing.JFrame {
                 .addContainerGap(34, Short.MAX_VALUE))
         );
 
-        jTabbedPane2.addTab("Reportes", jPanel4);
+        tbReportes.addTab("Reportes", pnlReportes);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -547,7 +561,7 @@ public class VistaAdmin extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTabbedPane2)
+                .addComponent(tbReportes)
                 .addContainerGap())
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(118, 118, 118)
@@ -560,7 +574,7 @@ public class VistaAdmin extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 348, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(tbReportes, javax.swing.GroupLayout.PREFERRED_SIZE, 348, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -569,17 +583,15 @@ public class VistaAdmin extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(182, 182, 182)
-                        .addComponent(pnlMensaje, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(224, 224, 224)
+                .addComponent(pnlMensaje, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -602,9 +614,9 @@ public class VistaAdmin extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void jRadioButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton10ActionPerformed
+    private void rbHistorial2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbHistorial2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton10ActionPerformed
+    }//GEN-LAST:event_rbHistorial2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -643,6 +655,8 @@ public class VistaAdmin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup bgHistorial;
+    private javax.swing.ButtonGroup bgReportes;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -670,31 +684,31 @@ public class VistaAdmin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton10;
-    private javax.swing.JRadioButton jRadioButton11;
-    private javax.swing.JRadioButton jRadioButton12;
-    private javax.swing.JRadioButton jRadioButton13;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JRadioButton jRadioButton4;
-    private javax.swing.JRadioButton jRadioButton5;
-    private javax.swing.JRadioButton jRadioButton6;
-    private javax.swing.JRadioButton jRadioButton8;
-    private javax.swing.JRadioButton jRadioButton9;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTabbedPane jTabbedPane2;
+    private javax.swing.JPanel pnlGLocal;
     private javax.swing.JPanel pnlGMenu;
     private javax.swing.JPanel pnlGPedidos;
     private javax.swing.JPanel pnlGReservaciones;
+    private javax.swing.JPanel pnlHistorial;
     private javax.swing.JPanel pnlMensaje;
+    private javax.swing.JPanel pnlReportes;
+    private javax.swing.JRadioButton rbHistorial1;
+    private javax.swing.JRadioButton rbHistorial2;
+    private javax.swing.JRadioButton rbHistorial3;
+    private javax.swing.JRadioButton rbHistorial4;
+    private javax.swing.JRadioButton rbHistorial5;
+    private javax.swing.JRadioButton rbReporte1;
+    private javax.swing.JRadioButton rbReporte2;
+    private javax.swing.JRadioButton rbReporte3;
+    private javax.swing.JRadioButton rbReporte4;
+    private javax.swing.JRadioButton rbReporte5;
+    private javax.swing.JRadioButton rbReporte6;
+    private javax.swing.JRadioButton rbReporte7;
+    private javax.swing.JTabbedPane tbReportes;
+    private javax.swing.JTabbedPane tpGestiones;
     // End of variables declaration//GEN-END:variables
 }
