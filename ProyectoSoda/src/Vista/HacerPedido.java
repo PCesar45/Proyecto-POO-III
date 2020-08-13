@@ -57,7 +57,7 @@ public class HacerPedido extends javax.swing.JFrame {
         rbCombo = new javax.swing.JRadioButton();
         rbPlato = new javax.swing.JRadioButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 102, 153));
@@ -74,10 +74,6 @@ public class HacerPedido extends javax.swing.JFrame {
 
         jLabel5.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
         jLabel5.setText("Codigos de producto");
-
-        txtTelefono.setText(" ");
-
-        txtIdentificacion.setText(" ");
 
         taDireccion.setColumns(20);
         taDireccion.setRows(5);
