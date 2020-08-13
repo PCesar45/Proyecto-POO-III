@@ -70,5 +70,10 @@ public class Pedido extends Servicio {
     public void setIdentificacion(long identificacion) {
         this.identificacion = identificacion;
     }
+
+    @Override
+    public String toString() {
+        return "Pedido{" + "numOrden=" + numOrden + ", direccion=" + direccion + ", pedidos=" + pedidos + '}';
+    }
     
 }

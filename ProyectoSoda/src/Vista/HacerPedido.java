@@ -5,6 +5,10 @@
  */
 package Vista;
 
+import Controlador.Singleton;
+import Modelo.Pedido;
+import java.util.Date;
+
 /**
  *
  * @author Andrés
@@ -30,8 +34,8 @@ public class HacerPedido extends javax.swing.JFrame {
         grbProducto = new javax.swing.ButtonGroup();
         panel = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        lblTelefono = new javax.swing.JLabel();
+        lblIdentificacion = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         txtTelefono = new javax.swing.JTextField();
@@ -54,11 +58,11 @@ public class HacerPedido extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(0, 102, 153));
         jLabel1.setText("Formalizar Pedido");
 
-        jLabel2.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-        jLabel2.setText("Telefono: ");
+        lblTelefono.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+        lblTelefono.setText("Telefono: ");
 
-        jLabel3.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
-        jLabel3.setText("N. Identificación");
+        lblIdentificacion.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+        lblIdentificacion.setText("N. Identificación");
 
         jLabel4.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
         jLabel4.setText("Direccion: ");
@@ -77,9 +81,12 @@ public class HacerPedido extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
         jLabel6.setText("que desee pedir:");
 
-        txtCodigo.setText(" ");
-
         btnCodigo.setText("Agregar a la lista");
+        btnCodigo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCodigoActionPerformed(evt);
+            }
+        });
 
         jLabel7.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
         jLabel7.setText("Productos Solicitados ");
@@ -121,7 +128,7 @@ public class HacerPedido extends javax.swing.JFrame {
                         .addGroup(panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(panelLayout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel3)
+                                .addComponent(lblIdentificacion)
                                 .addGap(34, 34, 34)
                                 .addComponent(txtIdentificacion, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelLayout.createSequentialGroup()
@@ -138,7 +145,7 @@ public class HacerPedido extends javax.swing.JFrame {
                         .addGap(53, 53, 53))
                     .addGroup(panelLayout.createSequentialGroup()
                         .addGroup(panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
+                            .addComponent(lblTelefono)
                             .addComponent(jLabel4))
                         .addGroup(panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(panelLayout.createSequentialGroup()
@@ -173,14 +180,14 @@ public class HacerPedido extends javax.swing.JFrame {
                     .addGroup(panelLayout.createSequentialGroup()
                         .addGap(78, 78, 78)
                         .addGroup(panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2)
+                            .addComponent(lblTelefono)
                             .addComponent(txtTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(panelLayout.createSequentialGroup()
                         .addGap(22, 22, 22)
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel3)
+                            .addComponent(lblIdentificacion)
                             .addComponent(txtIdentificacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(18, 18, 18)
                 .addGroup(panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -196,8 +203,8 @@ public class HacerPedido extends javax.swing.JFrame {
                         .addGap(23, 23, 23)
                         .addGroup(panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(panelLayout.createSequentialGroup()
-                                .addGroup(panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(rbPlato)
+                                .addGroup(panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(rbPlato, javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(rbCombo))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -230,11 +237,29 @@ public class HacerPedido extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        int numOrden=Singleton.getInstance().getMiLocal().getCodPedido();
+        Singleton.getInstance().getMiLocal().setCodPedido(Singleton.getInstance().getMiLocal().getCodPedido()+1);
+        String direc=taDireccion.getText();
+        Date ldt = new Date();
+        int telef=Integer.parseInt(txtTelefono.getText());
+        long id=Long.parseLong(txtIdentificacion.getText());
+        Pedido nuevoPedido= new Pedido(numOrden, direc, ldt, telef, id);
+        Singleton.getInstance().getMiLocal().agregarPedido(nuevoPedido);
+        System.out.println();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void rbPlatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbPlatoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_rbPlatoActionPerformed
+
+    private void btnCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCodigoActionPerformed
+        // TODO add your handling code here:
+        int codigo= Integer.parseInt(txtCodigo.getText());
+        System.out.println(rbPlato.isEnabled());
+            
+        
+        
+    }//GEN-LAST:event_btnCodigoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -276,14 +301,14 @@ public class HacerPedido extends javax.swing.JFrame {
     private javax.swing.ButtonGroup grbProducto;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JLabel lblIdentificacion;
+    private javax.swing.JLabel lblTelefono;
     private javax.swing.JPanel panel;
     private javax.swing.JRadioButton rbCombo;
     private javax.swing.JRadioButton rbPlato;

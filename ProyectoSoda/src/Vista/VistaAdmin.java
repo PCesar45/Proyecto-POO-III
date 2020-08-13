@@ -10,10 +10,7 @@ import Modelo.Combo;
 import Modelo.LeerCombos;
 import Modelo.LeerPlatos;
 import Modelo.Plato;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.ArrayList;
-import javax.swing.JButton;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
@@ -670,21 +667,10 @@ public class VistaAdmin extends javax.swing.JFrame {
 
                 modelo.addRow(ListaColumna);
              }
-            JButton Registar=new JButton("Registar Nuevo");  
-        Registar.setLocation(1150, 200);
-        vista.add(Registar);
-        Registar.setSize(150, 60);
+            
+        
+        
          vista.setVisible(true);
-         Registar.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Agregar ag=new Agregar();
-                ag.setVisible(true);
-            }
-        });
-        
-        
-         
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -692,8 +678,6 @@ public class VistaAdmin extends javax.swing.JFrame {
        
 //        
 //        //Carga los combos
-        LeerPlatos plts= new LeerPlatos();
-        plts.Recuperar();
         LeerCombos p1 = new LeerCombos();
         p1.Recuperar();
         boolean combos=true;
@@ -730,18 +714,7 @@ public class VistaAdmin extends javax.swing.JFrame {
              }
             
         }
-        JButton Registar=new JButton("Registar Nuevo");  
-        Registar.setLocation(1150, 200);
-        vista.add(Registar);
-        Registar.setSize(150, 60);
-         vista.setVisible(true);
-         Registar.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Agregar ag=new Agregar();
-                ag.setVisible(true);
-            }
-        });
+        vista.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**

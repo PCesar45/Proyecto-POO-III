@@ -11,12 +11,9 @@ import Modelo.LeerCombos;
 import Modelo.LeerPlatos;
 import Modelo.Plato;
 import java.awt.Image;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
-import javax.swing.JButton;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
@@ -381,18 +378,10 @@ public class VistaCliente extends javax.swing.JFrame {
 
                 modelo.addRow(ListaColumna);
              }
-        JButton HacerP=new JButton("Hacer Pedido");  
-        HacerP.setLocation(1150, 200);
-        vista.add(HacerP);
-        HacerP.setSize(100, 60);
+            
+        
+        
          vista.setVisible(true);
-         HacerP.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                HacerPedido ag=new HacerPedido();
-                ag.setVisible(true);
-            }
-        });
     }//GEN-LAST:event_btnMCMenuActionPerformed
 
     private void btnMCMenu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMCMenu1ActionPerformed
@@ -432,18 +421,9 @@ public class VistaCliente extends javax.swing.JFrame {
                 ListaColumna[4]=combost.get(j).getDescripcion();
                 modelo.addRow(ListaColumna);
              }
-        JButton HacerP=new JButton("Hacer Pedido");  
-        HacerP.setLocation(1150, 200);
-        vista.add(HacerP);
-        HacerP.setSize(100, 60);
-         vista.setVisible(true);
-         HacerP.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                HacerPedido ag=new HacerPedido();
-                ag.setVisible(true);
-            }
-        });
+            
+        
+        vista.setVisible(true);
     }//GEN-LAST:event_btnMCMenu1ActionPerformed
 
     /**
